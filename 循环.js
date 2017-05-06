@@ -154,5 +154,6 @@ $('.list li').each(function(i, ele){
 //将 伪数组转成数组
 var domlist = document.getElementsByTagName('div');
 var res = [].slice.call(domlist);
+// Array.prototype.slice.call(arguments)
 
 //补充： ()(), !function() {}(), +function() {}() 三种函数自执行的方式
