@@ -152,3 +152,33 @@ bd();
 // i 4
 // i 4
 // i 4
+
+
+//--------------------
+//考察变量定义提升 this指针指向 运算符优先级 原型 继承 全局变量污染 对象属性以及原型属性优先级等等
+//函数声明  和  函数表达式 这两个此处存疑
+// function Foo(){
+//     getName = function(){
+//         console.log('Foo',1);
+//     };
+//     return this;
+// }
+// Foo.getName = function(){
+//     console.log('Foo',2);
+// };
+// Foo.prototype.getName = function(){
+//     console.log('Foo',3);
+// };
+// var getName = 0;
+// var getName = function (){
+//     console.log('Foo',4);
+// };
+function getName(){
+console.log('Foo',5);
+};
+
+// Foo.getName();
+getName();
+// Foo().getName();
+// // getName();
+// new Foo.getName();
