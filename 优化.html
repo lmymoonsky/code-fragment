@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>优化那些事</title>
+</head>
+<body>
+  1、静态资源：
+  <ul>
+    <li>将css放在head中，js放在body下面</li>
+    <li>图片采用雪碧图，应用webp文件格式，图片压缩、剪裁，前端用canvas剪裁，压缩是采用美团云自压缩形式，将图片上传到美团云，加上.webp后缀，并且设置参数可以自动实现剪裁。</li>
+    <li>请求头部设置gzip</li>
+    <li>ugliyfy,文件压缩合并，混淆，变量名简化</li>
+    <li>合理利用缓存 减少http请求，减少IO</li>
+    <li>http2 实现高并发</li>
+    <li>图片缓存（三级缓存）内存缓存 本地缓存 网络缓存</li>
+    <li>chach-contral 强缓存(public) 协商缓存304(no-catch) 不缓存200(no-store)</li>
+    <li>H5 webWorker: 工作线程，能够长时间运行而不被中断的后台程序，运行在主线程之外的worker线程，简而言之就是允许js 创建多线程 而不受主线程控制，但是不能操作DOM.从而，可以用webWorker来处理一些比较耗时的计算.</li>
+    <li>离线存储 manifest:在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。
+离线的情况下，浏览器就直接使用离线存储的资源。</li>
+    <li>pwa</li>
+  </ul>
+</body>
+</html>
